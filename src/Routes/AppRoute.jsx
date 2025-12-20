@@ -1,7 +1,7 @@
 import { Route, Routes, useSearchParams } from "react-router-dom";
 import { Login, Signup, Home, Posts, WritePost, ViewPost, EditPost, Page404 } from "../pages/index";
-import { Footer, PillNav, ScreenLoader } from "../components/index";
-import { useEffect, useState } from "react";
+import { Footer, PillNav } from "../components/index";
+import { useEffect } from "react";
 import appAuth from "../app/AuthService";
 import { useDispatch } from "react-redux";
 import { login, logout } from "../store/reducers/authSlice";
@@ -11,12 +11,10 @@ import useAllPosts from "../hooks/useAllPosts";
 
 const AppRoute = () => {
       const dispatch = useDispatch();
-      const [isLoading, setLoading] = useState(true);
       const [searchParams] = useSearchParams();
       const userid = searchParams.get("userId");
       const secret = searchParams.get("secret");
       useEffect(() => {
-            setLoading(true);
             (async () => {
                   if (userid && secret) {
                         try {
@@ -37,14 +35,12 @@ const AppRoute = () => {
                         if (userData && userData.emailVerification) {
                               // Here the userData will come check if user email is verified
                               dispatch(login(userData));
-                              setLoading(false);
                         } else {
                               dispatch(logout());
-                              setLoading(false);
                         }
                   } catch (err) {
                         console.log(err.message);
-                        setLoading(false);
+
                         dispatch(logout());
                   }
             })();
@@ -58,7 +54,6 @@ const AppRoute = () => {
 
       return (
             <>
-                  {isLoading && <ScreenLoader />}
                   <Toaster />
                   <PillNav items={menuItems} className="fixed top-0" />
                   <Routes>

@@ -115,7 +115,7 @@ const WritePost = ({ editPost }) => {
             <section className="w-full py-10 lg:px-10 min-h-svh  font-primary-text  text-[var(--color-bl)]">
                   {/* Input Section for Post image */}
                   <form onSubmit={handleSubmit(formSubmittingToDb)} className="space-y-5">
-                        <h1 className="font-cool md:text-5xl text-3xl text-center font-extrabold">Write a Post</h1>
+                        <h1 className="font-cool mt-10 md:text-5xl text-3xl text-center font-extrabold">Write a Post</h1>
                         <div className="flex space-y-10  justify-center items-center flex-col">
                               <div onClick={() => document.getElementById("featured-image")?.click()} className="border-2  cursor-pointer mx-auto container border-dashed  border-border rounded-lg p-8 w-1/2 text-center">
                                     <div className="flex flex-col items-center gap-2">

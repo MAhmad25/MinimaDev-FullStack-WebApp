@@ -25,7 +25,7 @@ const Posts = () => {
       };
       return (
             <section className="w-full space-y-5 px-5 min-h-screen py-10 font-primary-text text-[var(--color-bl)] ">
-                  <div className="flex justify-center items-center flex-col gap-10 w-full">
+                  <div className="flex justify-center items-center mt-10 flex-col gap-10 w-full">
                         <h1 className="font-black text-5xl sm:text-7xl tracking-tight font-cool text-center">Journals</h1>
                         <p className="font-ppneue sm:w-1/2 text-center text-xl sm:text-2xl">Explore our collection of articles, stories, and insights on design, technology, and creativity.</p>
                   </div>
