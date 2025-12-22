@@ -55,7 +55,7 @@ const AppRoute = () => {
       return (
             <>
                   <Toaster />
-                  <PillNav items={menuItems} className="fixed top-0" />
+                  <PillNav items={menuItems} className="fixed top-0 hidden sm:flex" />
                   <Routes>
                         <Route index path="/" element={<Home />} />
                         <Route

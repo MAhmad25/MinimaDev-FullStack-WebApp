@@ -19,7 +19,7 @@ const Logout = () => {
             });
       };
       return (
-            <button disabled={loader} onClick={handleLogout} className="px-4 flex justify-center items-center cursor-pointer py-2 text-sm tracking-tight leading-none  text-[var(--color-bl)] rounded-full">
+            <button disabled={loader} onClick={handleLogout} className="px-4 flex justify-center items-center cursor-pointer py-2 text-sm tracking-tight leading-none  text-red-500 rounded-full">
                   {loader ? <Loader /> : "Logout"}
             </button>
       );

@@ -1,10 +1,15 @@
 import React, { useCallback, useLayoutEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { LuSquarePen } from "react-icons/lu";
+import { MdLogin } from "react-icons/md";
+import { Logout } from "./index";
 
-export const StaggeredMenu = ({ position = "right", colors = ["#504f53", "#201f23"], items = [], socialItems = [], displaySocials = true, displayItemNumbering = true, className, logoUrl = "/logo.svg", menuButtonColor = "#000000", openMenuButtonColor = "#000000", changeMenuColorOnOpen = true, isFixed = false, accentColor = "#5227FF", closeOnClickAway = true, onMenuOpen, onMenuClose }) => {
+export const StaggeredMenu = ({ position = "right", colors = ["#504f53", "#201f23"], items = [], displayItemNumbering = true, className, logoUrl = "/logo.svg", menuButtonColor = "#000000", openMenuButtonColor = "#000000", changeMenuColorOnOpen = true, isFixed = false, accentColor = "#5227FF", closeOnClickAway = true, onMenuOpen, onMenuClose }) => {
       const [open, setOpen] = useState(false);
       const openRef = useRef(false);
+      const status = useSelector((state) => state.auth.status);
 
       const panelRef = useRef(null);
       const preLayersRef = useRef(null);
@@ -350,37 +355,34 @@ export const StaggeredMenu = ({ position = "right", colors = ["#504f53", "#201f2
                         <aside id="staggered-menu-panel" ref={panelRef} className="staggered-menu-panel absolute top-0 right-0 h-full pointer-events-auto bg-white flex flex-col p-[6em_2em_2em_2em] overflow-y-auto z-10 backdrop-blur-[12px]" style={{ WebkitBackdropFilter: "blur(12px)" }} aria-hidden={!open}>
                               <div className="sm-panel-inner flex-1 flex flex-col gap-5">
                                     <ul className="sm-panel-list list-none m-0 p-0 flex flex-col gap-2" role="list" data-numbering={displayItemNumbering || undefined}>
-                                          {items && items.length ? (
+                                          {items.length &&
                                                 items.map((it, idx) => (
                                                       <li className="sm-panel-itemWrap cursor-pointer relative overflow-hidden leading-none" key={it.label + idx}>
                                                             <Link to={`${it.link}`} className="sm-panel-item relative text-black font-semibold text-[4rem] cursor-pointer leading-none tracking-[-2px] uppercase transition-[background,color] duration-150 ease-linear inline-block no-underline pr-[1.4em]" aria-label={it.ariaLabel} data-index={idx + 1}>
                                                                   <span className="sm-panel-itemLabel inline-block [transform-origin:50%_100%] will-change-transform">{it.label}</span>
                                                             </Link>
                                                       </li>
-                                                ))
-                                          ) : (
-                                                <li className="sm-panel-itemWrap relative overflow-hidden leading-none" aria-hidden="true">
-                                                      <span className="sm-panel-item relative text-black font-semibold text-[4rem] cursor-pointer leading-none tracking-[-2px] uppercase transition-[background,color] duration-150 ease-linear inline-block no-underline pr-[1.4em]">
-                                                            <span className="sm-panel-itemLabel inline-block [transform-origin:50%_100%] will-change-transform">No items</span>
-                                                      </span>
-                                                </li>
-                                          )}
+                                                ))}
                                     </ul>
 
-                                    {displaySocials && socialItems && socialItems.length > 0 && (
-                                          <div className="sm-socials mt-auto pt-8 flex flex-col gap-3" aria-label="Social links">
-                                                <h3 className="sm-socials-title m-0 text-base font-medium [color:var(--sm-accent,#ff0000)]">Socials</h3>
-                                                <ul className="sm-socials-list list-none m-0 p-0 flex flex-row items-center gap-4 flex-wrap" role="list">
-                                                      {socialItems.map((s, i) => (
-                                                            <li key={s.label + i} className="sm-socials-item">
-                                                                  <a href={s.link} target="_blank" rel="noopener noreferrer" className="sm-socials-link text-[1.2rem] font-medium text-[#111] no-underline relative inline-block py-[2px] transition-[color,opacity] duration-300 ease-linear">
-                                                                        {s.label}
-                                                                  </a>
-                                                            </li>
-                                                      ))}
-                                                </ul>
-                                          </div>
-                                    )}
+                                    <div className="sm-socials mt-auto pt-8 flex flex-col gap-3" aria-label="Social links">
+                                          <ul className="sm-socials-list list-none m-0 p-0 flex flex-row items-center gap-4 flex-wrap" role="list">
+                                                <li>
+                                                      {!status && (
+                                                            <Link className="border-[0.1px] rounded-full px-3 py-1" to="/create-account ">
+                                                                  Create account
+                                                            </Link>
+                                                      )}
+                                                </li>
+                                                <li>
+                                                      <Link className="px-3 py-2 flex items-center justify-center-safe gap-2 border-[1px] rounded-full text-[var(--color-wht)] bg-[var(--color-bl)]  border-white/60" to={`${status ? "/write-post" : "/login"}`}>
+                                                            {status ? <LuSquarePen /> : <MdLogin />}
+                                                            <p className="leading-none whitespace-nowrap tracking-tight">{status ? "Write Blog" : "Login"}</p>
+                                                      </Link>
+                                                </li>
+                                                <li> {status && <Logout />}</li>
+                                          </ul>
+                                    </div>
                               </div>
                         </aside>
                   </div>

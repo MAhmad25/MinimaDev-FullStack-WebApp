@@ -45,7 +45,7 @@ const Signup = () => {
                                           <div>
                                                 <span className="text-xl mb-1.5 font-semibold text-green-700 tracking-normal">Email for verfication sent to your email</span>
                                                 <p className="text-green-600 text-xs">
-                                                      Please check your email for further steps. <span className="font-extrabold text-red-500">You cannot close this tab !</span>
+                                                      Please check your email for further steps. <span className="font-extrabold text-red-500">You can close this tab !</span>
                                                 </p>
                                           </div>
                                     </div>
