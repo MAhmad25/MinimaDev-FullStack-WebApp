@@ -85,14 +85,7 @@ const AppRoute = () => {
                                     </Protected>
                               }
                         />
-                        <Route
-                              path="/journals"
-                              element={
-                                    <Protected>
-                                          <Posts />
-                                    </Protected>
-                              }
-                        />
+                        <Route path="/journals" element={<Posts />} />
                         <Route
                               path="/journals/:id"
                               element={
