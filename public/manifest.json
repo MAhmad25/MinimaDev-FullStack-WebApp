@@ -10,7 +10,7 @@
                   "purpose": "any"
             },
             {
-                  "src": "/favicon-628.png",
+                  "src": "/appicon-628.png",
                   "sizes": "628x628",
                   "type": "image/png",
                   "purpose": "any"
@@ -39,5 +39,5 @@
       "start_url": ".",
       "display": "fullscreen",
       "theme_color": "#14120b",
-      "background_color": "#ffff"
+      "background_color": "#f5f5f5"
 }
