@@ -1,0 +1,43 @@
+{
+      "name": "Minima | Blog",
+      "short_name": "Minima | Blog",
+      "description": "Write anything that comes to your mind! No limits",
+      "icons": [
+            {
+                  "src": "/favicon.png",
+                  "sizes": "272x272",
+                  "type": "image/png",
+                  "purpose": "any"
+            },
+            {
+                  "src": "/favicon-628.png",
+                  "sizes": "628x628",
+                  "type": "image/png",
+                  "purpose": "any"
+            },
+            {
+                  "src": "/favicon-628.png",
+                  "sizes": "628x628",
+                  "type": "image/png",
+                  "purpose": "maskable"
+            }
+      ],
+      "screenshots": [
+            {
+                  "src": "/ogimage.webp",
+                  "sizes": "1998x1456",
+                  "type": "image/png",
+                  "form_factor": "wide"
+            },
+            {
+                  "src": "/ogimage.webp",
+                  "sizes": "1998x1456",
+                  "type": "image/png",
+                  "form_factor": "narrow"
+            }
+      ],
+      "start_url": ".",
+      "display": "fullscreen",
+      "theme_color": "#14120b",
+      "background_color": "#14120b"
+}
