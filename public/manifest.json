@@ -4,8 +4,8 @@
       "description": "Write anything that comes to your mind! No limits",
       "icons": [
             {
-                  "src": "/favicon.png",
-                  "sizes": "272x272",
+                  "src": "/appicon.png",
+                  "sizes": "192x192",
                   "type": "image/png",
                   "purpose": "any"
             },
@@ -16,8 +16,8 @@
                   "purpose": "any"
             },
             {
-                  "src": "/favicon-628.png",
-                  "sizes": "628x628",
+                  "src": "/appicon.png",
+                  "sizes": "192x192",
                   "type": "image/png",
                   "purpose": "maskable"
             }
