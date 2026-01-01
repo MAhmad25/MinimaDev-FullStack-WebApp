@@ -48,12 +48,9 @@ const ViewPost = () => {
       return (
             <section className="w-full px-5 font-primary-text min-h-svh text-[var(--color-bl)] bg-[var(--color-wht)]">
                   {/* Top Section */}
-                  <section className="w-full py-5 flex flex-col lg:flex-row">
+                  <section className="w-full pt-28 flex flex-col lg:flex-row">
                         {/* Left Section */}
                         <div className="lg:w-3/4 xl:px-10 py-2 space-y-5">
-                              <Link className="w-fit flex mt-5 items-center justify-center   underline" to="/journals">
-                                    <IoIosArrowRoundBack size="2rem" /> <p className="text-sm">All Posts</p>
-                              </Link>
                               <h1 className="font-cool  md:w-1/2   font-black text-3xl sm:text-5xl  tracking-tight ">{postData?.title} </h1>
                               <h3 className="px-3 py-1  border-[1px] w-fit  rounded-full tracking-tight leading-none">Written by: {postData?.authorName}</h3>
                               {isAdmin && (

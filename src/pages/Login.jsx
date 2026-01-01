@@ -58,8 +58,8 @@ const Login = () => {
                                     {isSubmitting ? <Loader /> : "Login"}
                               </button>
                         </form>
-                        <Link className="mt-10 flex gap-2 items-center justify-center underline" to="/">
-                              <IoIosArrowRoundBack size="2rem" /> <p className="text-lg">Back to home</p>
+                        <Link className="mt-10 flex gap-2 items-center justify-center underline" to="/create-account">
+                              <p className="text-lg">Don't have an account ?</p>
                         </Link>
                   </div>
             </section>

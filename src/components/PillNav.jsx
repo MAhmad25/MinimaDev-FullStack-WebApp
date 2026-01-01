@@ -6,7 +6,7 @@ import { LuSquarePen } from "react-icons/lu";
 import { MdLogin } from "react-icons/md";
 import { Logout } from "./index";
 
-const PillNav = ({ logo = "/logo.svg", logoAlt = "Logo", items, activeHref, className = "", ease = "power3.easeOut", baseColor = "#fff", pillColor = "#060010", hoveredPillTextColor = "#060010", pillTextColor, initialLoadAnimation = true }) => {
+const PillNav = ({ logo = "/favicon-628.png", logoAlt = "Logo", items, activeHref, className = "", ease = "power3.easeOut", baseColor = "#fff", pillColor = "#060010", hoveredPillTextColor = "#060010", pillTextColor, initialLoadAnimation = true }) => {
       const status = useSelector((state) => state.auth.status);
       const loading = useSelector((state) => state.loader.isSkeleton);
       const resolvedPillTextColor = pillTextColor ?? baseColor;
@@ -172,7 +172,7 @@ const PillNav = ({ logo = "/logo.svg", logoAlt = "Logo", items, activeHref, clas
                                           background: "var(--base, #000)",
                                     }}
                               >
-                                    <img src={logo} alt={logoAlt} ref={logoImgRef} className="object-cover " />
+                                    <img src={logo} alt={logoAlt} ref={logoImgRef} className="object-cover invert " />
                               </Link>
                         ) : (
                               <a
@@ -189,7 +189,7 @@ const PillNav = ({ logo = "/logo.svg", logoAlt = "Logo", items, activeHref, clas
                                           background: "var(--base, #000)",
                                     }}
                               >
-                                    <img src={logo} alt={logoAlt} ref={logoImgRef} className="w-full h-full object-cover block" />
+                                    <img src={logo} alt={logoAlt} ref={logoImgRef} className="w-full h-full object-cover invert block" />
                               </a>
                         )}
 
