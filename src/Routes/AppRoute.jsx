@@ -9,6 +9,7 @@ import { showSkeletonFalse } from "../store/reducers/loadingSlice";
 import toast, { Toaster } from "react-hot-toast";
 import Protected from "./Protected";
 import useAllPosts from "../hooks/useAllPosts";
+import DistortedGlass from "../components/ui/distorted-glass";
 
 const AppRoute = () => {
       const dispatch = useDispatch();
@@ -58,6 +59,7 @@ const AppRoute = () => {
       return (
             <>
                   <Toaster />
+                  <DistortedGlass />
                   <PillNav items={menuItems} className="fixed top-0 hidden sm:flex" />
                   <Routes>
                         <Route
