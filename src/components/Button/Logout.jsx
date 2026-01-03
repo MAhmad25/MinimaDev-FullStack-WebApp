@@ -3,7 +3,7 @@ import appAuth from "../../app/AuthService";
 import { logout } from "../../store/reducers/authSlice";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { Loader } from "../index";
+import { Loader, LogoutIcon } from "../index";
 import { removePosts } from "../../store/reducers/postsSlice";
 const Logout = () => {
       const dispatch = useDispatch();
@@ -20,7 +20,14 @@ const Logout = () => {
       };
       return (
             <button disabled={loader} onClick={handleLogout} className="px-4 flex justify-center items-center cursor-pointer py-2 text-sm tracking-tight leading-none  text-red-500 rounded-full">
-                  {loader ? <Loader /> : "Logout"}
+                  {loader ? (
+                        <Loader />
+                  ) : (
+                        <>
+                              <LogoutIcon />
+                              <p>Logout</p>
+                        </>
+                  )}
             </button>
       );
 };

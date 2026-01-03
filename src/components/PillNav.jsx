@@ -2,9 +2,7 @@ import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 import { useSelector } from "react-redux";
-import { LuSquarePen } from "react-icons/lu";
-import { MdLogin } from "react-icons/md";
-import { Logout } from "./index";
+import { Logout, LogoutIcon, PenIcon } from "./index";
 
 const PillNav = ({ logo = "/favicon-628.png", logoAlt = "Logo", items, activeHref, className = "", ease = "power3.easeOut", baseColor = "#fff", pillColor = "#060010", hoveredPillTextColor = "#060010", pillTextColor, initialLoadAnimation = true }) => {
       const status = useSelector((state) => state.auth.status);
@@ -272,8 +270,8 @@ const PillNav = ({ logo = "/favicon-628.png", logoAlt = "Logo", items, activeHre
                                     ) : (
                                           <>
                                                 <Link className="px-3 py-2 flex items-center justify-center-safe gap-2 border-[1px] rounded-full text-[var(--color-wht)] bg-[var(--color-bl)]  border-white/60" to={`${status ? "/write-post" : "/login"}`}>
-                                                      {status ? <LuSquarePen /> : <MdLogin />}
-                                                      <p className="leading-none whitespace-nowrap tracking-tight">{status ? "Write Blog" : "Login"}</p>
+                                                      {status ? <PenIcon /> : <LogoutIcon />}
+                                                      <p className="leading-none whitespace-nowrap tracking-tight">{status ? "Write" : "Login"}</p>
                                                 </Link>
                                                 {!status && (
                                                       <Link className="border-[0.1px] rounded-full px-3 py-1" to="/create-account ">

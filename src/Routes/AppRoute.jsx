@@ -1,6 +1,6 @@
 import { Route, Routes, useSearchParams } from "react-router-dom";
 import { Login, Signup, Home, Posts, WritePost, ViewPost, EditPost, Page404 } from "../pages/index";
-import { Footer, PillNav, LinesWrapper } from "../components/index";
+import { Footer, PillNav, LinesWrapper, DistortedGlass } from "../components/index";
 import { useEffect } from "react";
 import appAuth from "../app/AuthService";
 import { useDispatch } from "react-redux";
@@ -9,7 +9,6 @@ import { showSkeletonFalse } from "../store/reducers/loadingSlice";
 import toast, { Toaster } from "react-hot-toast";
 import Protected from "./Protected";
 import useAllPosts from "../hooks/useAllPosts";
-import DistortedGlass from "../components/ui/DistortedGlass";
 
 const AppRoute = () => {
       const dispatch = useDispatch();

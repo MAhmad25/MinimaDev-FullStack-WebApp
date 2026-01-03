@@ -1,6 +1,5 @@
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { IoIosArrowRoundBack } from "react-icons/io";
-import { Post } from "../components/index";
+import { Post, TrashIcon } from "../components/index";
 import { useState, useEffect } from "react";
 import documentService from "../app/DocService";
 import toast from "react-hot-toast";
@@ -55,11 +54,12 @@ const ViewPost = () => {
                               <h3 className="px-3 py-1  border-[1px] w-fit  rounded-full tracking-tight leading-none">Written by: {postData?.authorName}</h3>
                               {isAdmin && (
                                     <div className="flex gap-5 items-center">
-                                          <Link className="sm:px-4 p-3 text-sm sm:text-lg sm:py-2 rounded-t-xl bg-[var(--color-bl)] text-[var(--color-wht)]" to={`/u/edit-post/${id}`}>
+                                          <Link className="sm:px-4 p-3 text-sm sm:text-lg sm:py-2 rounded-xl bg-[var(--color-bl)] text-[var(--color-wht)]" to={`/u/edit-post/${id}`}>
                                                 Edit
                                           </Link>
-                                          <button onClick={handlePostDeletion} className="sm:px-4 cursor-pointer p-3 text-sm sm:text-lg sm:py-2 rounded-xl  text-red-400">
-                                                Delete
+                                          <button onClick={handlePostDeletion} className="sm:px-4 flex justify-center items-center cursor-pointer p-3 text-sm sm:text-lg sm:py-2 rounded-xl  text-red-400">
+                                                <TrashIcon />
+                                                <p>Delete</p>
                                           </button>
                                     </div>
                               )}
